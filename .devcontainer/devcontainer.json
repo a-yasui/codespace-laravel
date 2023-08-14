@@ -5,5 +5,17 @@
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:2": {},
         "ghcr.io/devcontainers/features/node:1": {}
-    }
+    },
+    "updateContentCommand": "composer install --dev",
+    "postCreateCommand": "",
+      "postAttachCommand": {
+        "server": "php artisan serve --host='0.0.0.0' --port=8000"
+      },
+      "portsAttributes": {
+        "8000": {
+          "label": "Application",
+          "onAutoForward": "openPreview"
+        }
+    },
+    "forwardPorts": [8000]
 }

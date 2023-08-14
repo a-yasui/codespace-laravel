@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  database:
+    ports:
+      - "5432"
+
+  maildev:
+    image: maildev/maildev
+    ports: ["1025", "1080"]
+
